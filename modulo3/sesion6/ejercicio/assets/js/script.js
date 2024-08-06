@@ -21,7 +21,19 @@ console.log(closet);
 
 console.log('------ Inicio ejercicio 3-----------');
 // Usando el método filter
-var edades = [32, 33, 16, 40];
+
+function edades(){
+    const edades = [];
+    let cantidad = parseInt(prompt('cuantas edades ingresara?'));
+    
+    for (let i = 0; i < cantidad.length; i++) {
+        edades.push(i);
+        
+    }
+    console.log(edades)
+}
+
+//var edades = [32, 33, 16, 40];
 console.log(edades)
 var resultado = edades.filter(verificarMayorDeEdad);
 function verificarMayorDeEdad(edad) {

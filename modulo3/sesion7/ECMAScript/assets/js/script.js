@@ -1,35 +1,35 @@
-let str = `Hazlo funcionar, hazlo bien, hazlo rápido`;
-console.log(str);
-console.log(str.replaceAll("hazlo", "ABC"));
+libros=[
+    {
+        'Titulo':'El señor de los anillos',
+        'Autor':'J.R.R. Tolkien',
+        'Anio':1954
+    },
+    {
+        'Titulo':'Cien años de soledad',
+        'Autor':'Gabriel García Márquez',
+        'Anio':1967
+    },
+    {
+        'Titulo':'1984',
+        'Autor':'George Orwell',
+        'Anio':null
+    }
+]
 
-// expresión regular
-let patron = /hazlo/gi;
+//inicio codigo para formatear los libros
+function formato() {
+    for (let i = 0; i < libros.length; i++) {
+        console.log('------------------');
+        console.log('Título: '+libros[i].Titulo);
+        console.log('Autor: '+libros[i].Autor.replaceAll(' ','_'));
+        console.log('Año de publicación: '+ (libros[i].Anio ?? 'No especificado'));
+    }
+}
+formato();
 
-console.log(
-    str.replaceAll(patron, function (match) {
-    if (match === "Hazlo") return "1234";
-    if (match === "hazlo") return "ABC";
-    })
-);
-
-//trimstart, trimend
-
-const str2 = " JavaScript ";
-const resultado = str2.trimStart();
-console.log({ str2 });
-console.log({ resultado });
-
-const str3 = " JavaScript ";
-const resultado2 = str3.trimEnd();
-console.log({ str3 });
-console.log({ resultado2 });
-
-const presupuestoAnual = 1_000_000_000;
-console.log(presupuestoAnual);
-
-//oparador de fusion nula
-const nombre = null ?? "Aquiles";
-console.log(nombre);
-const edad = undefined ?? 84;
-console.log(edad);
-const colorFav = "azul";
+//inicio funcion para buscar lor autor
+function buscarPorAutor(autor) {
+    return autor.Autor === "George Orwell"
+}
+let autor = libros.find(libro => buscarPorAutor(libro));
+console.log(autor);
