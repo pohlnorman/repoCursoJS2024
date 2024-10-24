@@ -1,0 +1,30 @@
+
+<div class="container mt-4 col-6">
+    <div class="card text-bg-light border-dark">
+        <div class="card-header">
+            Editar datos del jugador
+        </div>
+        <div class="card-body">
+            <form action="/jugadores/{{selectedPlayer.idPlayer}}" method="post">
+                <input type="text" class="form-control" name="idPlayer" value="{{selectedPlayer.idPlayer}}" hidden>
+                <div class="mb-3">
+                    <label for="" class="form-label"> Nombre del jugador</label>
+                    <input type="text" class="form-control" name="name" value="{{selectedPlayer.name}}">
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label"> Posicion de juego</label>
+                    <select name="position" id="" class="form-select">
+                        <option value="Arquero" {{#if (eq selectedPlayer.position "Arquero" )}}selected {{else}} "" {{/if }}>Arquero</option>
+                        <option value="Defensor" {{#if (eq selectedPlayer.position "Defensor" )}}selected {{else}} "" {{/if }}>Defensor</option>
+                        <option value="Medio campo" {{#if (eq selectedPlayer.position "Medio campo" )}}selected {{else}} "" {{/if }}>Medio campo</option>
+                        <option value="Delantero" {{#if (eq selectedPlayer.position "Delantero" )}}selected {{else}} "" {{/if }}>Delantero</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <a href="/" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

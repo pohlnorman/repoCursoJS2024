@@ -1,0 +1,34 @@
+<div class="container mt-4 col-6">
+    <div class="card text-bg-light border-dark">
+        <div class="card-header">
+            Agregar nuevo registro
+        </div>
+        <div class="card-body">
+            <form id="form" action="/jugadores/agregar" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="" class="form-label"> Nombre del jugador</label>
+                    <input type="text" class="form-control" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label"> Posicion de juego</label>
+                    <select name="position" id="" class="form-select" required>
+                        <option value="" selected>-------</option>
+                        <option value="Arquero">Arquero</option>
+                        <option value="Defensor">Defensor</option>
+                        <option value="Medio campo">Medio campo</option>
+                        <option value="Delantero">Delantero</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label"> seleccione la foto del jugador</label>
+                    <input type="file" class="form-control" name="file" multiple accept="image/*">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <a href="/" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

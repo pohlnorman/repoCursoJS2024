@@ -1,0 +1,35 @@
+<div class="container py-4">
+    <div class="p-5 mb-2 bg-body-tertiary rounded-3">
+        <div class="container-fluid py-2">
+            <h3>Lista de jugadores</h3>
+            <a href="/jugadores/agregar" class="btn btn-outline-primary mt-4">Agregar Jugador</a>
+            <table class="table table-bordered table-striped text-center mt-4" id="myTable" class="display">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Posicion</th>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Acciones</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each players}}
+                    <tr>
+                        <th class="align-middle" scope="row">{{idPlayer}}</th>
+                        <td class="align-middle">{{name}}</td>
+                        <td class="align-middle">{{position}}</td>
+                        <td><a href="/uploads/imgResize/{{image}}"><img src="/uploads/imgResize/{{image}}" alt=""></a></td>
+                        <td class="align-middle">
+                            <a href="/jugadores/editar/{{idPlayer}}" class="btn btn-outline-success">editar</a>
+                            <button class="btn btn-outline-danger" onclick="confirmDelete('{{idPlayer}}')">Borrar</button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    
